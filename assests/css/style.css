@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pathway+Gothic+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fira+Sans:ital,wght@0,100..900;1,100..900&family=Pathway+Gothic+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
     padding: 0;
@@ -22,15 +22,14 @@
     flex-wrap: wrap;
     margin-left: -12px;
     margin-right: -12px;
-
 }
 
 .bg-image {
     background-image: url("../images/forest.png");
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-
+    background-size: cover;
+    min-height: 100vh;
 }
 
 .col-5 {
@@ -43,7 +42,6 @@
     width: 50%;
     padding-left: 12px;
     padding-right: 12px;
-
 }
 
 .justify-between {
@@ -52,13 +50,12 @@
 
 nav {
     width: 100%;
-    padding: 0.8rem 2rem;
+    padding: 12px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: Fira Sans;
     background: linear-gradient(180deg, #000000 36.19%, rgba(0, 0, 0, 0) 100%);
-
 }
 
 .logo img {
@@ -68,14 +65,14 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
+    gap: 24px;
     list-style: none;
 }
 
 .nav-links a {
     text-decoration: none;
     color: white;
-    font-size: 0.95rem;
+    font-size: 15px;
     transition: color 0.3s;
 }
 
@@ -86,12 +83,14 @@ nav {
 .nav-right {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 16px;
+    
 }
 
 .icons {
     display: flex;
-    gap: 0.8rem;
+    gap: 13px;
+    
 }
 
 .icons a {
@@ -114,7 +113,7 @@ nav {
 .btn {
     background: #f1c40f;
     color: white;
-    padding: 0.5rem 1.2rem;
+    padding: 8px 19px;
     border-radius: 20px;
     text-decoration: none;
     font-weight: bold;
@@ -125,7 +124,6 @@ nav {
     background: #d4ac0d;
 }
 
-
 .hero-image {
     max-width: 45%;
 }
@@ -134,10 +132,7 @@ nav {
     width: 100%;
     height: auto;
     animation: float 4s ease-in-out infinite;
-
-
 }
-
 
 .hero-text small {
     font-family: 'Roboto';
@@ -153,7 +148,7 @@ nav {
 }
 
 .hero-text h1 {
-    width: 604px;
+    max-width: 604px;
     font-family: 'Exo 2';
     font-style: normal;
     font-weight: 700;
@@ -167,8 +162,7 @@ nav {
 }
 
 .hero-text p {
-    width: 631px;
-    height: 48px;
+    max-width: 631px;
     font-family: 'Fira Sans';
     font-style: normal;
     font-weight: 400;
@@ -178,19 +172,9 @@ nav {
     opacity: 0.9;
 }
 
-.hero-img img {
-    height: 400px;
-    margin-left: 70px;
-    left: 0px;
-    width: 100%;
-    animation: float 4s ease-in-out infinite;
-}
-
 .footer {
     background: linear-gradient(180deg, #030D01 0%, rgba(3, 13, 1, 0) 100%);
 }
-
-
 
 @keyframes float {
     0% {
@@ -203,5 +187,111 @@ nav {
 
     100% {
         transform: translateY(0px);
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    .col-5,
+    .col-6 {
+        width: 100%;
+    }
+    }
+
+    .hero-text {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+        line-height: 58px;
+        margin: 0 auto;
+    }
+
+    .hero-text p {
+        margin: 20px auto;
+    }
+
+    .hero-image {
+        max-width: 70%;
+        margin: 30px auto 0;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        padding: 16px;
+        
+    }
+
+    .nav-links {
+        gap: 16px;
+        
+    }
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+        line-height: 46px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        padding: 16px;
+        
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .icons {
+        gap: 8px;
+        
+    }
+
+    .hero-image {
+        max-width: 85%;
+    }
+}
+
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 16px;
+        
+    }
+
+    .hero-text h1 {
+        font-size: 28px;
+        line-height: 38px;
+    }
+
+    .btn {
+        padding: 6px 16px;
+        
+        font-size: 14px;
+    }
+
+    .icons a {
+        width: 28px;
+        height: 28px;
     }
 }
